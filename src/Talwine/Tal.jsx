@@ -12,7 +12,7 @@ const Tal=()=>{
   
   try {
     seterror(" ")
-    const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=${Api_key}`)
+    const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=${Api_key}&units=metric`)
     if(!response.ok) throw new Error("city not found")
   const weathervalue= await response.json()
   setWeather(weathervalue)
@@ -36,7 +36,7 @@ const Tal=()=>{
                onKeyDown={(e)=> e.key === "Enter" && wetherdata()}
              type="text" name="" placeholder="City Name" className="p-3 w-11/12 text-black rounded-xl font-bold outline-none h-10" id="" />
              <button onClick={wetherdata}
-             className="bg-white  w-11/12 text-sky-600 font-semibold py-2 rounded-xl  hover:bg-indigo-500" >
+             className="bg-white  w-11/12 text-gray-600 font-semibold py-2 rounded-xl  hover:bg-zinc-200" >
              🔍 Search Weather
              </button>
          </div>
